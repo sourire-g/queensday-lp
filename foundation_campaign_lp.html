@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ファンデーションキャンペーン 6月・7月限定 10%OFF｜QUEEN'S DAY</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --gold: #C9A96E;
+    --gold-light: #E8D5B0;
+    --dark: #2a2a2a;
+    --soft: #F9F5F0;
+    --pink: #F4E8E2;
+    --text: #3a3a3a;
+  }
+
+  body {
+    font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'Georgia', serif;
+    color: var(--text);
+    background: #fff;
+    line-height: 1.8;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: #EDE0D4;
+  }
+  .hero-img {
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+  .hero-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 70%);
+    padding: 40px 30px 30px;
+    text-align: center;
+  }
+  .campaign-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 3px;
+    padding: 7px 24px;
+    margin-bottom: 16px;
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 42px);
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .hero h1 span {
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+  .hero-subtitle {
+    font-size: clamp(13px, 2.5vw, 16px);
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 20px;
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  .price-block {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid var(--gold-light);
+    padding: 16px 36px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .price-old {
+    font-size: 15px;
+    color: #999;
+    text-decoration: line-through;
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+  }
+  .price-arrow { color: var(--gold); font-size: 20px; }
+  .price-new {
+    font-size: 26px;
+    color: var(--gold);
+    font-weight: 500;
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+  }
+  .price-new small { font-size: 13px; }
+  .period-note {
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    letter-spacing: 1px;
+  }
+
+  /* TROUBLES */
+  .section { padding: 70px 20px; }
+  .section-inner { max-width: 800px; margin: 0 auto; }
+  .section-label {
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-bottom: 10px;
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    font-weight: 500;
+  }
+  .section-title {
+    text-align: center;
+    font-size: clamp(20px, 4vw, 30px);
+    font-weight: 300;
+    color: var(--dark);
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+  }
+
+  .troubles { background: var(--pink); }
+  .trouble-list {
+    list-style: none;
+    display: grid;
+    gap: 14px;
+  }
+  .trouble-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: #fff;
+    padding: 18px 24px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    line-height: 1.6;
+    border-left: 3px solid var(--gold-light);
+  }
+  .trouble-list li::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* FEATURES */
+  .features { background: var(--soft); }
+  .feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+  }
+  .feature-card {
+    background: #fff;
+    padding: 32px 24px;
+    text-align: center;
+    border: 1px solid #ede5da;
+    border-radius: 4px;
+  }
+  .feature-icon {
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 22px;
+  }
+  .feature-card h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .feature-card p {
+    font-size: 13px;
+    color: #6a6a6a;
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    line-height: 1.7;
+  }
+
+  /* 8 ROLES */
+  .roles { background: #fff; }
+  .roles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+    margin-top: 10px;
+  }
+  .role-item {
+    text-align: center;
+    padding: 20px 10px;
+    background: linear-gradient(135deg, #FDF6EE, #F4EDE2);
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    color: var(--dark);
+    border: 1px solid var(--gold-light);
+  }
+  .role-num {
+    display: block;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+  }
+
+  /* MERITS */
+  .merits { background: var(--pink); }
+  .merit-list { display: grid; gap: 20px; }
+  .merit-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background: #fff;
+    padding: 24px 28px;
+    border-radius: 4px;
+  }
+  .merit-num {
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 40px;
+  }
+  .merit-content h3 {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+  .merit-content p {
+    font-size: 14px;
+    color: #6a6a6a;
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    line-height: 1.7;
+  }
+
+  /* INGREDIENTS */
+  .ingredients { background: var(--soft); }
+  .ingredient-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .ingredient-tag {
+    background: #fff;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+  }
+  .free-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .free-item {
+    text-align: center;
+    font-size: 13px;
+    color: #7a7a7a;
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    padding: 8px;
+    background: #fff;
+    border-radius: 3px;
+  }
+  .free-item::before { content: '○ '; color: var(--gold); }
+
+  /* PRODUCTS */
+  .products { background: #fff; }
+  .product-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+  .product-card {
+    border: 1px solid #ede5da;
+    border-radius: 6px;
+    overflow: hidden;
+    text-align: center;
+  }
+  .product-image-area {
+    background: linear-gradient(135deg, #FDF6EE, #EDE0D4);
+    padding: 40px 20px;
+    font-size: 40px;
+  }
+  .product-info { padding: 24px 20px; }
+  .product-color-dot {
+    display: inline-block;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .product-card h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .product-card .desc {
+    font-size: 13px;
+    color: #888;
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    margin-bottom: 16px;
+  }
+  .price-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+  .original-price {
+    font-size: 14px;
+    color: #bbb;
+    text-decoration: line-through;
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+  }
+  .campaign-price {
+    font-size: 22px;
+    color: var(--gold);
+    font-weight: 500;
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+  }
+  .tax-note {
+    font-size: 11px;
+    color: #aaa;
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+  }
+  .off-badge {
+    display: inline-block;
+    background: #e85;
+    color: #fff;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    margin-left: 6px;
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, #2a2a2a 0%, #3d3028 100%);
+    padding: 80px 20px;
+    text-align: center;
+    color: #fff;
+  }
+  .cta-section .section-label { color: var(--gold-light); }
+  .cta-section h2 {
+    font-size: clamp(22px, 4vw, 34px);
+    font-weight: 300;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+  }
+  .cta-section p {
+    font-size: 14px;
+    color: #c0b0a0;
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    margin-bottom: 40px;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), #B8944A);
+    color: #fff;
+    padding: 18px 60px;
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-decoration: none;
+    border-radius: 3px;
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    transition: opacity 0.3s;
+  }
+  .cta-btn:hover { opacity: 0.85; }
+  .cta-note {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #9a8a7a;
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #1a1a1a;
+    color: #888;
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+    letter-spacing: 1px;
+  }
+  footer a { color: var(--gold-light); text-decoration: none; }
+
+  /* DIVIDER */
+  .gold-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 30px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="queensday-hiro.jpg" alt="QUEEN'S DAY オールインファンデーション" class="hero-img">
+</section>
+
+<!-- CAMPAIGN PRICE -->
+<div style="background:linear-gradient(135deg,#FDF6EE,#F4EDE2);padding:36px 20px;text-align:center;">
+  <div class="campaign-badge">6月・7月限定キャンペーン</div>
+  <p class="hero-subtitle" style="color:#7a6a5a;margin-top:12px;">QUEEN'S DAY オールインファンデーション</p>
+  <div class="price-block">
+    <div>
+      <div class="price-old">通常価格 ¥6,600</div>
+      <div style="font-size:11px;color:#bbb;font-family:sans-serif;">（税込）</div>
+    </div>
+    <div class="price-arrow">→</div>
+    <div>
+      <div class="price-new">¥5,940<small>（税込）</small></div>
+      <div style="font-size:12px;color:#c8a060;font-family:sans-serif;">10% OFF</div>
+    </div>
+  </div>
+  <div class="period-note" style="color:#8a7a6a;">キャンペーン期間：2026年6月1日〜7月31日</div>
+</div>
+
+<!-- INTRO TEXT -->
+<div style="background:#fff;padding:50px 20px;text-align:center;">
+  <div style="max-width:680px;margin:0 auto;">
+    <p style="font-size:clamp(20px,4vw,30px);font-weight:300;color:#2a2a2a;letter-spacing:2px;line-height:1.6;margin-bottom:20px;">1プッシュ約20秒で完結<br>時短<span style="color:#C9A96E;">"生ファンデ"</span></p>
+    <div style="width:40px;height:1px;background:#C9A96E;margin:0 auto 24px;"></div>
+    <p style="font-size:15px;color:#5a5a5a;font-family:'Hiragino Kaku Gothic ProN',sans-serif;line-height:2;text-align:left;">自らの肌を守る事、それはお子様とのスキンシップも守ります。肌の全域に美容液が広がる様な、うっとりする程の使い心地は、肌を守る事にこだわりたどり着いた濃厚な美容成分のチカラ。トラブルが起こりやすいメイク中も肌を守り、健康的な素肌へ導きます。大切なお子様との毎日のスキンシップも安心な国産ヴィーガンファンデーション。使う直前まで空気に触れないエアレスコンパクト構造なので、手を汚さず使える優れもの！</p>
+  </div>
+</div>
+
+<!-- TROUBLES -->
+<section class="section troubles">
+  <div class="section-inner">
+    <p class="section-label">TROUBLE</p>
+    <h2 class="section-title">こんなお悩み、ありませんか？</h2>
+    <div class="gold-divider"></div>
+    <ul class="trouble-list">
+      <li>ファンデーション迷子で何がいいかわからない</li>
+      <li>厚化粧はしたくないけど、カバー力はほしい</li>
+      <li>お肌に優しいファンデーションを使いたい</li>
+      <li>化粧崩れが気になる</li>
+      <li>朝は時間がないのでお化粧の時間を短縮したい</li>
+      <li>ニキビが気になるけどファンデーションはつけたい</li>
+      <li>基礎化粧に、とてもこだわっている</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PICK UP -->
+<section class="section features">
+  <div class="section-inner">
+    <p class="section-label">PICK UP</p>
+    <h2 class="section-title">クイーンズデイの３つのこだわり</h2>
+    <div class="gold-divider"></div>
+    <div class="feature-cards">
+      <div class="feature-card" style="padding:0;overflow:hidden;">
+        <img src="qeensday-softforcas.jpg" alt="ソフトフォーカス効果" style="width:100%;display:block;">
+      </div>
+      <div class="feature-card" style="padding:0;overflow:hidden;">
+        <img src="queensday-airress.jpg" alt="エアレスコンパクト構造" style="width:100%;display:block;">
+      </div>
+      <div class="feature-card" style="padding:0;overflow:hidden;">
+        <img src="queensday-coler.jpg" alt="選べる2色" style="width:100%;display:block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 ROLES -->
+<section class="section roles">
+  <div class="section-inner">
+    <p class="section-label">8 IN 1</p>
+    <h2 class="section-title">これ<span style="color:var(--gold);">ひとつ</span>でこなす8つの役割</h2>
+    <div class="gold-divider"></div>
+    <div class="roles-grid">
+      <div class="role-item"><span class="role-num">01</span>美容液</div>
+      <div class="role-item"><span class="role-num">02</span>日焼け止め<br><small style="font-size:11px;color:#888;">SPF34・PA+++</small></div>
+      <div class="role-item"><span class="role-num">03</span>ハイライト</div>
+      <div class="role-item"><span class="role-num">04</span>お粉</div>
+      <div class="role-item"><span class="role-num">05</span>コンシーラー</div>
+      <div class="role-item"><span class="role-num">06</span>化粧下地</div>
+      <div class="role-item"><span class="role-num">07</span>マスク炎症防止</div>
+      <div class="role-item"><span class="role-num">08</span>ファンデーション</div>
+    </div>
+  </div>
+</section>
+
+<!-- MERITS -->
+<section class="section merits">
+  <div class="section-inner">
+    <p class="section-label">MERIT</p>
+    <h2 class="section-title">キャンペーンで試すメリット</h2>
+    <div class="gold-divider"></div>
+    <div class="merit-list">
+      <div class="merit-item">
+        <div class="merit-num">01</div>
+        <div class="merit-content">
+          <h3>エステ専売品だから、敏感肌でも安心</h3>
+          <p>QUEEN'S DAYは、毎日お客様のお肌と向き合っているエステサロン専売ブランド。安心で信頼できる国産ヴィーガン化粧品ブランドです。化粧品に「本当に必要なもの」だけを。肌と体にやさしい成分だけを届けたい。というメーカーの想いから、一切の妥協をせず製品が完成しました。QUEEN'S DAYの化粧品はすべて、動物由来の成分を一切使用していません。さらに、特定原材料28品目不使用にもこだわり、食べ物と同じ厳しい基準により"口にしても安心なレベル"の優しさをご実感ください。</p>
+        </div>
+      </div>
+      <div class="merit-item">
+        <div class="merit-num">02</div>
+        <div class="merit-content">
+          <h3>実際に店頭で試せる</h3>
+          <p>色選びは大切です。オークル・ライトオークルの2色を、スタッフが丁寧にご案内。お肌に合うカラーをその場で確認いただけます。</p>
+        </div>
+      </div>
+      <div class="merit-item">
+        <div class="merit-num">03</div>
+        <div class="merit-content">
+          <h3>リフィルがあるからコスパも◎</h3>
+          <p>気に入ったらリフィル（¥5,500→キャンペーン価格¥4,950）で続けられます。コンパクト本体はそのまま使えるので、ごみも減らせてエコにも。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INGREDIENTS -->
+<section class="section ingredients">
+  <div class="section-inner">
+    <p class="section-label">INGREDIENTS</p>
+    <h2 class="section-title">肌を守る、厳選成分</h2>
+    <div class="gold-divider"></div>
+    <div class="ingredient-tags">
+      <span class="ingredient-tag">黒米紅麹菌発酵エキス</span>
+      <span class="ingredient-tag">フラーレン</span>
+      <span class="ingredient-tag">3種のセラミド</span>
+      <span class="ingredient-tag">カーネーションエキス</span>
+      <span class="ingredient-tag">月桃葉エキス</span>
+      <span class="ingredient-tag">モモ果汁</span>
+      <span class="ingredient-tag">セラビオ®</span>
+    </div>
+    <div class="free-list">
+      <div class="free-item">動物由来成分フリー</div>
+      <div class="free-item">食品アレルギー28品目フリー</div>
+      <div class="free-item">パラベンフリー</div>
+      <div class="free-item">鉱物油フリー</div>
+      <div class="free-item">紫外線吸収剤フリー</div>
+      <div class="free-item">合成着色料フリー</div>
+      <div class="free-item">合成香料フリー</div>
+      <div class="free-item">PEGフリー</div>
+    </div>
+    <img src="queensday-seibun.jpg" alt="厳選成分" style="width:100%;display:block;margin-top:36px;border-radius:4px;">
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section products">
+  <div class="section-inner">
+    <p class="section-label">LINEUP</p>
+    <h2 class="section-title">キャンペーン対象商品</h2>
+    <div class="gold-divider"></div>
+    <div class="product-cards">
+      <!-- 画像① -->
+      <div class="product-card">
+        <div class="product-image-area" style="background:linear-gradient(135deg,#FDF6EE,#EDE0D4);min-height:200px;display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:13px;color:#bbb;font-family:sans-serif;">画像準備中</span>
+        </div>
+        <div class="product-info">
+          <h3>オールインファンデーション<br>01 オークル（本体 / 16g）</h3>
+          <p class="desc">シミやくすみをしっかりカバーしたい方に</p>
+          <div class="price-row">
+            <span class="original-price">¥6,600</span>
+            <span class="campaign-price">¥5,940</span>
+            <span class="off-badge">10% OFF</span>
+          </div>
+          <p class="tax-note">税込 / キャンペーン価格</p>
+        </div>
+      </div>
+      <!-- 画像② -->
+      <div class="product-card">
+        <div class="product-image-area" style="padding:0;"><img src="qeensday-02hontai.jpg" alt="02 ライトオークル 本体" style="width:100%;display:block;"></div>
+        <div class="product-info">
+          <h3>オールインファンデーション<br>02 ライトオークル（本体 / 16g）</h3>
+          <p class="desc">肌悩みが少なく、ナチュラルにカバーしたい方に</p>
+          <div class="price-row">
+            <span class="original-price">¥6,600</span>
+            <span class="campaign-price">¥5,940</span>
+            <span class="off-badge">10% OFF</span>
+          </div>
+          <p class="tax-note">税込 / キャンペーン価格</p>
+        </div>
+      </div>
+      <!-- 画像③ -->
+      <div class="product-card">
+        <div class="product-image-area" style="padding:0;"><img src="qeensday-01refill.jpg" alt="01 オークル リフィル" style="width:100%;display:block;"></div>
+        <div class="product-info">
+          <h3>オールインファンデーション<br>01 オークル リフィル（16g）</h3>
+          <p class="desc">コスパよく続けたい方に。本体ケースがそのまま使えます。</p>
+          <div class="price-row">
+            <span class="original-price">¥5,500</span>
+            <span class="campaign-price">¥4,950</span>
+            <span class="off-badge">10% OFF</span>
+          </div>
+          <p class="tax-note">税込 / キャンペーン価格</p>
+        </div>
+      </div>
+      <!-- 画像④ -->
+      <div class="product-card">
+        <div class="product-image-area" style="padding:0;"><img src="qeensday-02refill.jpg" alt="02 ライトオークル リフィル" style="width:100%;display:block;"></div>
+        <div class="product-info">
+          <h3>オールインファンデーション<br>02 ライトオークル リフィル（16g）</h3>
+          <p class="desc">コスパよく続けたい方に。本体ケースがそのまま使えます。</p>
+          <div class="price-row">
+            <span class="original-price">¥5,500</span>
+            <span class="campaign-price">¥4,950</span>
+            <span class="off-badge">10% OFF</span>
+          </div>
+          <p class="tax-note">税込 / キャンペーン価格</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <p class="section-label">CAMPAIGN</p>
+  <h2>6月・7月の限定キャンペーン<br>この機会にぜひ。</h2>
+  <p>エステ専売の生ファンデを、特別価格でお試しいただけます。<br>
+     店頭でのカウンセリング・肌タイプ別のご提案も承っております。</p>
+  <a href="https://queens-day.com/collections/allinfoundation" class="cta-btn" target="_blank">
+    商品ページを見る
+  </a>
+  <p class="cta-note">※ キャンペーン価格は2026年6月1日〜7月31日の期間中のみ適用されます。</p>
+</section>
+
+<footer>
+  <p>© 2026 QUEEN'S DAY All rights reserved. &nbsp;｜&nbsp;
+     <a href="https://queens-day.com" target="_blank">queens-day.com</a>
+  </p>
+</footer>
+
+</body>
+</html>
